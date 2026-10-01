@@ -1,0 +1,69 @@
+PS C:\Users\Nico> "5" - 2
+3
+
+PS C:\Users\Nico> "5" + 2
+52
+
+PS C:\Users\Nico> "Camille" * 2
+CamilleCamille
+
+==============================================================
+
+PS C:\Users\Nico> "Camille"+"Camille"
+CamilleCamille
+
+PS C:\Users\Nico> "Camille"-"Camille"
+Impossible de convertir la valeur «Camille» en type «System.Int32». Erreur
+: «Le format de la chaîne d'entrée est incorrect.»
+Au caractère Ligne:1 : 1
++ "Camille"-"Camille"
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument : (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvalidCastFromStringToInteger
+	
+PS C:\Users\Nico> 5 + "2"
+7
+J'attendais 52
+	
+PS C:\Users\Nico> "Camille"*3
+CamilleCamilleCamille
+J'attendais une erreur
+
+PS C:\Users\Nico> "Camille"*"3"
+CamilleCamilleCamille
+J'attendais une erreur
+
+PS C:\Users\Nico> "Camille"+"3"
+Camille3
+
+Qui exécute le JavaScript d'une page web ?
+Le navigateur.
+
+Tu changes le fond d'une page depuis la console, puis tu recharges. Que se passe-t-il, et pourquoi ?
+La modification depuis la console ne concerne q'une copie de la page en mémoire.
+Les éléments du site n'ont pas changés.
+
+Pourquoi "5" + 2 donne "52" alors que "5" - 2 donne 3 ?
+Le signe '+' lorsqu'il est utilisé avec des chaînes de caractères, permet la concaténation de celles-ci. Ici, dans "5"+2, 2 est implicitement considéré comme un caractère. Le signe '-' n'a pas d'effet sur les chaînes de caractères, donc ici on est confronté à deux types différents que JS ne peux 'caster'. 
+
+Que veut dire « interprété » ?
+Le langage n'est pas complilé, càd qu'il n'y a pas de vérification du code avant exécution et les erreurs de syntaxe ou autre ne sont pas relevées. 
+
+JavaScript ne tourne-t-il que dans un navigateur ?
+Non, il peut tourner sur le terminal avec node.js qui est un moteur JS.
+
+Pourquoi ne peut-on pas simplement remplacer JavaScript dans un navigateur ?
+Il n'a pas d'équivalent et des millions de sites en dépendent.
+
+==============================================================
+
+Le HTML dit ce qu'il y a, le CSS à quoi ça ressemble, JavaScript change les deux pendant que la page est affichée.
+
+Ton navigateur embarque pour cela un moteur, qui lit tes instructions et modifie la page en mémoire.
+
+Ce moteur tourne aussi sans navigateur, avec Node : JavaScript est un langage, pas un outil réservé aux pages web.
+
+Il est interprété : rien ne relit ton code avant qu'il tourne, donc une faute rare part en production sans prévenir personne.
+
+Il est faiblement typé : devant deux natures différentes, il convertit au lieu de refuser, et te rend un résultat faux sans rien signaler.
+

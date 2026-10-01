@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon premier prompt</title>
+</head>
+<body>
+
+    <script>
+        const userName = prompt("What's your name?");
+        console.log(userName);
+
+        const age = prompt("How old are you?");
+        console.log(typeof age); // "string" ← même si tu tapes 30 !
+
+        const ageNumber = parseInt(age);
+        console.log(typeof ageNumber); // "number" ✅
+    </script>
+
+</body>
+</html>
